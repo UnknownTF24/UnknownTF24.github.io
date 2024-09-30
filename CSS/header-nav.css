@@ -1,0 +1,132 @@
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.nombre-logo {
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 20px;
+    vertical-align: middle;
+    color: #020599;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el logo y el nombre */
+    justify-content: flex-start; /* Asegura que el contenido esté alineado a la izquierda */
+}
+
+
+/* Navbar */
+.navbar {
+    background-color: #8f8f8f;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten */
+}
+
+.navbar .logo {
+    max-width: 150px; /* Tamaño del logo */
+    height: auto; /* Mantener proporción */
+}
+
+.nombre-logo {
+    font-size: 50px; /* Tamaño de fuente ajustado */
+    color: #020599; /* Color del texto */
+    margin-left: 10px; /* Espacio a la izquierda del logo */
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Permitir que los enlaces se ajusten */
+    margin: 0; /* Eliminar margen */
+    padding: 0; /* Eliminar padding */
+}
+
+.nav-links li {
+    flex-shrink: 0; /* Evitar que los enlaces se compriman */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    white-space: nowrap; /* Evitar que los enlaces se dividan */
+}
+
+.nav-links li a:hover {
+    background-color: #7e7e7e;
+    border-radius: 5px;
+}
+
+.search-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permitir que se ajuste en dispositivos pequeños */
+}
+
+.search-input {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    max-width: 100%; /* Asegurar que no exceda el ancho del contenedor */
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+}
+
+.search-button {
+    padding: 6px 10px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #d62828;
+}
+
+/* Responsive Products */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: flex-start; /* Alinear a la izquierda */
+        padding: 10px; /* Ajustar el padding */
+        width: 100%; /* Asegurar que ocupe todo el ancho */
+    }
+
+    .navbar .logo {
+        max-width: 120px; /* Tamaño del logo en dispositivos móviles */
+    }
+
+    .nombre-logo {
+        font-size: 1.2em; /* Tamaño de fuente ajustado en móviles */
+        margin-left: 0; /* Eliminar margen en móviles */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Colocar enlaces en columna */
+        gap: 10px; /* Espacio entre enlaces */
+        align-items: flex-start; /* Alinear enlaces a la izquierda */
+        width: 100%; /* Asegurarse de que ocupen todo el ancho */
+        margin: 0; /* Asegurar que no haya margen que cause desbordamiento */
+    }
+
+    .search-container {
+        width: 100%; /* Hacer que el contenedor de búsqueda ocupe todo el ancho */
+        justify-content: flex-start; /* Alinear a la izquierda */
+        margin-top: 10px; /* Espacio adicional para móviles */
+    }
+}

@@ -1,0 +1,138 @@
+.carousel-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    width: 100%; /* Ancho completo */
+    max-width: 650px; /* Ancho máximo en pantallas grandes */
+    aspect-ratio: 1 / 1; /* Relación de aspecto cuadrada */
+    overflow: hidden; /* Evitar el desbordamiento */
+    position: relative;
+    margin: auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.carousel-images {
+    display: flex;
+    width: 400%; /* Ajuste para múltiples imágenes */
+    height: 100%; /* Asegura que ocupe todo el carrusel */
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 25%; /* Cada imagen ocupa una cuarta parte del carrusel */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 100%; /* Asegura que las imágenes no excedan la altura del carrusel */
+    object-fit: cover; /* Asegura que las imágenes se mantengan cuadradas y se ajusten sin distorsión */
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 50px;
+}
+
+.carousel-controls label {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-controls label:hover {
+    background-color: #bbb;
+    transform: scale(1.1);
+}
+
+#imagen1:checked ~ .carousel-images {
+    transform: translateX(0); /* Muestra la primera imagen */
+}
+
+#imagen2:checked ~ .carousel-images {
+    transform: translateX(-25%); /* Mueve el carrusel a la segunda imagen */
+}
+
+#imagen3:checked ~ .carousel-images {
+    transform: translateX(-50%); /* Mueve el carrusel a la tercera imagen */
+}
+
+#imagen4:checked ~ .carousel-images {
+    transform: translateX(-75%); /* Mueve el carrusel a la cuarta imagen */
+}
+
+#imagen1:checked ~ .carousel-controls label[for="imagen1"],
+#imagen2:checked ~ .carousel-controls label[for="imagen2"],
+#imagen3:checked ~ .carousel-controls label[for="imagen3"],
+#imagen4:checked ~ .carousel-controls label[for="imagen4"] {
+    background-color: #333;
+    border: 2px solid #fff;
+}
+
+/* Botones de navegación */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.carousel-button.left {
+    left: 10px;
+}
+
+.carousel-button.right {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* --- Ajustes Responsivos --- */
+@media (max-width: 768px) {
+    .carousel {
+        max-width: 400%; /* Ancho completo en móviles */
+        aspect-ratio: 2 / 1; /* Mantener la relación de aspecto cuadrada */
+    }
+
+    .carousel-images {
+        width: 400%; /* Mantener el ancho total para 4 imágenes */
+    }
+
+    .carousel-images img {
+        width: 100%; /* Cada imagen ocupa el 100% del ancho del carrusel */
+        height: auto; /* Mantener la proporción */
+        max-height: 100%; /* Asegurar que las imágenes no excedan la altura del carrusel */
+        object-fit: cover; /* Asegurar que las imágenes se mantengan cuadradas */
+    }
+
+    .carousel-controls {
+        gap: 30px; /* Reducir el espacio entre los controles */
+    }
+
+    .carousel-button {
+        font-size: 18px; /* Reducir el tamaño de los botones de navegación */
+        padding: 5px; /* Ajustar el padding de los botones */
+    }
+}

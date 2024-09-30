@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 15px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.producto {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 250px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.precio {
+    color: #020599;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Menu container */
+
+body {
+    margin: 0; /* Asegúrate de que no haya margen en el body */
+}
+
+.header {
+    position: fixed; /* Mantener el header fijo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho completo */
+    height: 60px; /* Ajusta según el tamaño de tu header */
+    background-color: #f8f8f8; /* Color de fondo del header */
+    z-index: 1001; /* Mayor z-index que la barra lateral */
+}
+
+.menu-container {
+    position: fixed; /* Cambiado a fixed para que el contenedor del menú no se desplace */
+    top: 60px; /* Debajo del header */
+    left: 0; /* Ajusta según sea necesario */
+    width: 200px; /* Ancho de la barra lateral */
+    z-index: 1000; /* Asegúrate de que esté por encima */
+}
+
+.menu-toggle {
+    background-color: #020599; /* Color del botón */
+    color: white; /* Color del texto */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px; /* Tamaño del icono */
+    position: fixed; /* Mantiene el botón fijo en la pantalla */
+    top: 170px; /* Ajusta según sea necesario */
+    left: 5px; /* Ajusta según sea necesario */
+    z-index: 1000; /* Asegúrate de que esté por encima */
+}
+
+.sidebar {
+    position: fixed; /* La barra lateral se mueve con el contenedor del menú */
+    top: 222px; /* Ajustado para que esté justo debajo del botón */
+    left: -200px; /* Fuera de la pantalla inicialmente */
+    width: 200px; /* Ancho de la barra lateral */
+    max-height: calc(100vh - 70px); /* Limitar la altura para no tapar el header */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease; /* Transición suave */
+    z-index: 999; /* Asegúrate de que esté por encima del contenido */
+    overflow-y: auto; /* Agrega un scroll vertical si el contenido es demasiado largo */
+}
+
+.menu-container:hover .sidebar {
+    left: 0; /* Mostrar la barra lateral al pasar el cursor */
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #020599;
+    font-weight: bold;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
